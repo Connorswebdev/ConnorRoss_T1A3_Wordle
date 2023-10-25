@@ -47,11 +47,12 @@ def play_wordle():
     
     secret_word = random.choice(word_list)
     
-    max_attempts = 6 if mode == 'random' else 5
-    attempts_left == max_attempts
-    attempts = 6 if mode == 'regular' else 5
-    while attempts > 0:
-        guess = input(f"Attempt {7 if mode == 'regular' else 6 - attempts}: Guess a {len(secret_word)}-letter word: ").lower()
+    max_attempts = 6 if mode == 'regular' else 5
+    attempts_left = max_attempts
+
+    while attempts_left > 0:
+        attempt_number = max_attempts - attempts_left + 1
+        guess = input(f"Attempt {attempt_number}: Guess a {len(secret_word)}-letter word: ").lower()
         
         if len(guess) != len(secret_word) or ' ' in guess:
             print(f"Please enter a {len(secret_word)}-letter word.")
@@ -77,8 +78,8 @@ def play_wordle():
             print(Fore.GREEN + f"Congratulations! You've guessed the word: {secret_word}")
             break
 
-        attempts -= 1
+        attempts_left -= 1
 
-    if attempts == 0:
+    if attempts_left == 0:
         print(Fore.RED + f"You've run out of attempts. The secret word was: {secret_word}")
 play_wordle()
