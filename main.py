@@ -1,6 +1,6 @@
 import random
 from nltk.corpus import words
-import string
+import math
 from colorama import init, Fore
             
     
@@ -13,7 +13,6 @@ def load_words_from_file(filename):
     return words
 
 valid_words = load_words_from_file("word_list.txt")
-print(f"Loaded {len(valid_words)} valid words.")
 
 
 def get_feedback(secret_word, guess):
@@ -45,10 +44,11 @@ def play_wordle():
     #defining the wordle mode and picking a random word from the list matching the criteria
     mode = choose_game_difficulty()
     word_list = word_list_based_on_mode(mode)
-    print(len(word_list))
     
     secret_word = random.choice(word_list)
     
+    max_attempts = 6 if mode == 'random' else 5
+    attempts_left == max_attempts
     attempts = 6 if mode == 'regular' else 5
     while attempts > 0:
         guess = input(f"Attempt {7 if mode == 'regular' else 6 - attempts}: Guess a {len(secret_word)}-letter word: ").lower()

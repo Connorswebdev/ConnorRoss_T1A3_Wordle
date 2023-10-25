@@ -9,7 +9,17 @@ filter_words= [word for word in nltk_word_list if len(word) in [5, 7]]
 with open("word_list.txt", "w") as file:
     for word in filter_words:
         file.write(f" {word}\n")
+
+
+
+
+
+
+# -- The following were the beginning scripts I made to generate all the possible 5 and 7 letter words using the nltk module. --
+
+
 # Writing every 5 letter word listed in the nltk module
+
 # with open("word_list.txt", "w") as word_file:
 #     count = 0
 #     for word in word_list:
