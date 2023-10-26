@@ -25,7 +25,22 @@ def get_feedback(secret_word, guess):
         else: feedback.append('R')
                     
     return feedback
-
+def main():
+        print("""\
+          
+ __      __       .__                                  __          
+/  \    /  \ ____ |  |   ____  ____   _____   ____   _/  |_  ____  
+\   \/\/   // __ \|  | _/ ___\/  _ \ /     \_/ __ \  \   __\/  _ \ 
+ \        /\  ___/|  |_\  \__(  <_> )  Y Y  \  ___/   |  | (  <_> )
+  \__/\  /  \___  >____/\___  >____/|__|_|  /\___  >  |__|  \____/ 
+       \/       \/          \/            \/     \/                
+          __      __                .___.__                        
+         /  \    /  \___________  __| _/|  |   ____                
+  ______ \   \/\/   /  _ \_  __ \/ __ | |  | _/ __ \   ______      
+ /_____/  \        (  <_> )  | \/ /_/ | |  |_\  ___/  /_____/      
+           \__/\  / \____/|__|  \____ | |____/\___  >              
+                \/                   \/           \/               
+""")
 def choose_game_difficulty():
         choice = input("Would you like to play (regular) or (hard) mode?").lower()
         if choice in ["regular", "hard"]:
@@ -39,9 +54,9 @@ def word_list_based_on_mode(mode):
         return [word.lower() for word in valid_words if len(word) == 7]
 
 def play_wordle():
+    main()
     while True:
     #defining the wordle mode and picking a random word from the list matching the criteria
-
         mode = choose_game_difficulty()
         word_list = word_list_based_on_mode(mode)
         secret_word = random.choice(word_list)
@@ -61,7 +76,7 @@ def play_wordle():
                 continue
 
             attempts_left -= 1
-            
+
             feedback = get_feedback(secret_word, guess)
         
             colored_output = ""
@@ -74,10 +89,14 @@ def play_wordle():
                     colored_output += Fore.RED + g + " "
                 
             print(colored_output)
-        
+            #Developer testing tool
+            #print(secret_word)
             if feedback == ['G'] * 5:
                 print(Fore.GREEN + f"Congratulations! You've guessed the word: {secret_word}")
-                break
+                play_again = input("Do you wish to play again? (yes/no): ").lower()
+                if play_again != "yes":
+                    print("Thanks for playing!")
+                    exit()
 
             if attempts_left == 0:
                 print(Fore.RED + f"You've run out of attempts. The secret word was: {secret_word}")
@@ -85,5 +104,6 @@ def play_wordle():
                 play_again = input("Do you wish to play again? (yes/no): ").lower()
                 if play_again != "yes":
                     print("Thanks for playing!")
-                break
+                    exit()
+
 play_wordle()
