@@ -40,39 +40,19 @@ def word_list_based_on_mode(mode):
         return [word.lower() for word in valid_words if len(word) == 7]
 
 def play_wordle():
+    while True:
     #defining the wordle mode and picking a random word from the list matching the criteria
-    
-    def main():
-        print("""\
-          
- __      __       .__                                  __          
-/  \    /  \ ____ |  |   ____  ____   _____   ____   _/  |_  ____  
-\   \/\/   // __ \|  | _/ ___\/  _ \ /     \_/ __ \  \   __\/  _ \ 
- \        /\  ___/|  |_\  \__(  <_> )  Y Y  \  ___/   |  | (  <_> )
-  \__/\  /  \___  >____/\___  >____/|__|_|  /\___  >  |__|  \____/ 
-       \/       \/          \/            \/     \/                
-          __      __                .___.__                        
-         /  \    /  \___________  __| _/|  |   ____                
-  ______ \   \/\/   /  _ \_  __ \/ __ | |  | _/ __ \   ______      
- /_____/  \        (  <_> )  | \/ /_/ | |  |_\  ___/  /_____/      
-           \__/\  / \____/|__|  \____ | |____/\___  >              
-                \/                   \/           \/               
-""")
-    
-    if __name__ == "__main__":
-        main()
-        
-    mode = choose_game_difficulty()
-    word_list = word_list_based_on_mode(mode)
-    
-    secret_word = random.choice(word_list)
-    
-    max_attempts = 6 if mode == 'regular' else 5
-    attempts_left = max_attempts
 
-    while attempts_left > 0:
-        attempt_number = max_attempts - attempts_left + 1
-        guess = input(f"Attempt {attempt_number}: Guess a {len(secret_word)}-letter word: ").lower()
+        mode = choose_game_difficulty()
+        word_list = word_list_based_on_mode(mode)
+        secret_word = random.choice(word_list)
+        max_attempts = 6 if mode == 'regular' else 5
+        attempts_left = max_attempts
+        game_won = False
+
+        while attempts_left > 0:
+            attempt_number = max_attempts - attempts_left + 1
+            guess = input(f"Attempt {attempt_number}: Guess a {len(secret_word)}-letter word: ").lower()
         
         if len(guess) != len(secret_word) or ' ' in guess:
             print(f"Please enter a {len(secret_word)}-letter word.")
@@ -94,12 +74,38 @@ def play_wordle():
                 
         print(colored_output)
 
+        attempts_left -= 1
+
         if feedback == ['G'] * 5:
             print(Fore.GREEN + f"Congratulations! You've guessed the word: {secret_word}")
             break
 
-        attempts_left -= 1
-
-    if attempts_left == 0:
+    if not game_won:
         print(Fore.RED + f"You've run out of attempts. The secret word was: {secret_word}")
+
+        play_again = input("Do you want to play again? (yes/no): ").lower()
+        if play_again != "yes":
+            print("Thanks for playing!")
+            break
+
+def main():
+        print("""\
+          
+ __      __       .__                                  __          
+/  \    /  \ ____ |  |   ____  ____   _____   ____   _/  |_  ____  
+\   \/\/   // __ \|  | _/ ___\/  _ \ /     \_/ __ \  \   __\/  _ \ 
+ \        /\  ___/|  |_\  \__(  <_> )  Y Y  \  ___/   |  | (  <_> )
+  \__/\  /  \___  >____/\___  >____/|__|_|  /\___  >  |__|  \____/ 
+       \/       \/          \/            \/     \/                
+          __      __                .___.__                        
+         /  \    /  \___________  __| _/|  |   ____                
+  ______ \   \/\/   /  _ \_  __ \/ __ | |  | _/ __ \   ______      
+ /_____/  \        (  <_> )  | \/ /_/ | |  |_\  ___/  /_____/      
+           \__/\  / \____/|__|  \____ | |____/\___  >              
+                \/                   \/           \/               
+""")
+    
 play_wordle()
+
+if __name__ == "__main__":
+        main()
