@@ -14,7 +14,6 @@ def load_words_from_file(filename):
 
 valid_words = load_words_from_file("word_list.txt")
 
-
 def get_feedback(secret_word, guess):
     feedback = []
 
@@ -42,6 +41,27 @@ def word_list_based_on_mode(mode):
 
 def play_wordle():
     #defining the wordle mode and picking a random word from the list matching the criteria
+    
+    def main():
+        print("""\
+          
+ __      __       .__                                  __          
+/  \    /  \ ____ |  |   ____  ____   _____   ____   _/  |_  ____  
+\   \/\/   // __ \|  | _/ ___\/  _ \ /     \_/ __ \  \   __\/  _ \ 
+ \        /\  ___/|  |_\  \__(  <_> )  Y Y  \  ___/   |  | (  <_> )
+  \__/\  /  \___  >____/\___  >____/|__|_|  /\___  >  |__|  \____/ 
+       \/       \/          \/            \/     \/                
+          __      __                .___.__                        
+         /  \    /  \___________  __| _/|  |   ____                
+  ______ \   \/\/   /  _ \_  __ \/ __ | |  | _/ __ \   ______      
+ /_____/  \        (  <_> )  | \/ /_/ | |  |_\  ___/  /_____/      
+           \__/\  / \____/|__|  \____ | |____/\___  >              
+                \/                   \/           \/               
+""")
+    
+    if __name__ == "__main__":
+        main()
+        
     mode = choose_game_difficulty()
     word_list = word_list_based_on_mode(mode)
     
