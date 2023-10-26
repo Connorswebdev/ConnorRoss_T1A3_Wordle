@@ -27,7 +27,6 @@ def get_feedback(secret_word, guess):
     return feedback
 
 def choose_game_difficulty():
-    while True:
         choice = input("Would you like to play (regular) or (hard) mode?").lower()
         if choice in ["regular", "hard"]:
             return choice
@@ -48,64 +47,43 @@ def play_wordle():
         secret_word = random.choice(word_list)
         max_attempts = 6 if mode == 'regular' else 5
         attempts_left = max_attempts
-        game_won = False
 
         while attempts_left > 0:
             attempt_number = max_attempts - attempts_left + 1
             guess = input(f"Attempt {attempt_number}: Guess a {len(secret_word)}-letter word: ").lower()
         
-        if len(guess) != len(secret_word) or ' ' in guess:
-            print(f"Please enter a {len(secret_word)}-letter word.")
-            continue
-        elif guess not in valid_words:
-            print("Please enter a real word.")
-            continue
+            if len(guess) != len(secret_word) or ' ' in guess:
+                print(f"Please enter a {len(secret_word)}-letter word.")
+                continue
+            
+            elif guess not in valid_words:
+                print("Please enter a real word.")
+                continue
 
-        feedback = get_feedback(secret_word, guess)
+            attempts_left -= 1
+            
+            feedback = get_feedback(secret_word, guess)
         
-        colored_output = ""
-        for i, (f, g) in enumerate(zip(feedback, guess)):
-            if f == 'G':
-                colored_output += Fore.GREEN + g + " "
-            elif f == 'Y':
-                colored_output += Fore.YELLOW + g + " "
-            else:
-                colored_output += Fore.RED + g + " "
+            colored_output = ""
+            for i, (f, g) in enumerate(zip(feedback, guess)):
+                if f == 'G':
+                    colored_output += Fore.GREEN + g + " "
+                elif f == 'Y':
+                    colored_output += Fore.YELLOW + g + " "
+                else:
+                    colored_output += Fore.RED + g + " "
                 
-        print(colored_output)
+            print(colored_output)
+        
+            if feedback == ['G'] * 5:
+                print(Fore.GREEN + f"Congratulations! You've guessed the word: {secret_word}")
+                break
 
-        attempts_left -= 1
+            if attempts_left == 0:
+                print(Fore.RED + f"You've run out of attempts. The secret word was: {secret_word}")
 
-        if feedback == ['G'] * 5:
-            print(Fore.GREEN + f"Congratulations! You've guessed the word: {secret_word}")
-            break
-
-    if not game_won:
-        print(Fore.RED + f"You've run out of attempts. The secret word was: {secret_word}")
-
-        play_again = input("Do you want to play again? (yes/no): ").lower()
-        if play_again != "yes":
-            print("Thanks for playing!")
-            break
-
-def main():
-        print("""\
-          
- __      __       .__                                  __          
-/  \    /  \ ____ |  |   ____  ____   _____   ____   _/  |_  ____  
-\   \/\/   // __ \|  | _/ ___\/  _ \ /     \_/ __ \  \   __\/  _ \ 
- \        /\  ___/|  |_\  \__(  <_> )  Y Y  \  ___/   |  | (  <_> )
-  \__/\  /  \___  >____/\___  >____/|__|_|  /\___  >  |__|  \____/ 
-       \/       \/          \/            \/     \/                
-          __      __                .___.__                        
-         /  \    /  \___________  __| _/|  |   ____                
-  ______ \   \/\/   /  _ \_  __ \/ __ | |  | _/ __ \   ______      
- /_____/  \        (  <_> )  | \/ /_/ | |  |_\  ___/  /_____/      
-           \__/\  / \____/|__|  \____ | |____/\___  >              
-                \/                   \/           \/               
-""")
-    
+                play_again = input("Do you wish to play again? (yes/no): ").lower()
+                if play_again != "yes":
+                    print("Thanks for playing!")
+                break
 play_wordle()
-
-if __name__ == "__main__":
-        main()
