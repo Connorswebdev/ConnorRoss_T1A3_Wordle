@@ -55,3 +55,12 @@ python3 main.py
 4. Guess the word according to the colour coordination of the terminal. If the letter is green it is in the correct spot and correct letter. If the colour is yellow it is in the incorrect spot but it is the correct letter. If the colour is red it is not in the word at all.
 5. If you win or lose, you can decide to replay the game which will bring you back to step 3. If you wish to quit, simply type 'no' on the replay screen.
 
+## Requirements
+
+* Note that these are installed once the "wordle_script.sh" script is activated.
+
+```
+NLTK Library == 3.8.1
+PyEnchant == 3.2.2
+Colorama == 0.4.6
+```
