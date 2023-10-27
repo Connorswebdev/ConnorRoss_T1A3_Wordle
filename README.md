@@ -19,9 +19,22 @@ This program recommends a modern operating system with either:
 * Windows 10
 * Mac OS Monterey
 * Ubuntu 20.04
-- This program also recommends at least 2GB RAM and 1 GB of Free Disk Space
+- This program also recommends at least 2GB RAM and 1 GB of Free Disk Space as recommended by VS Code
 
 #### [VS CODE](https://vscode-docs.readthedocs.io/en/latest/supporting/requirements/#:~:text=VS%20Code%20is%20lightweight%20and,1%20GB%20of%20RAM)
+
+## Installation
+
+* For an easy install. Simply run the following command: 'bash wordle_script.sh' -OR- 'source wordle_script.sh' -OR- '. wordle_script.sh' --- This script will check and install all prerequisites and dependencies to ensure that the system can run the program.
+
+For other installation instructions, they have been listed below.
+
+1. Ensure Python 3 is installed. If it is not installed, please follow this link and find the correct installer for your operating system: https://www.python.org/downloads/
+2. Ensure Pip 3 is installed. If it is not installed, please follow this link and find the correct installer for your operating system: https://pypi.org/project/pip/
+3. Install the required dependencies:
+```bash
+pip install -r requirements.txt
+```
 
 ### Software Requirements
 
