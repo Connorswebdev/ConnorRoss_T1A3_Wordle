@@ -2,6 +2,18 @@
 
 This application is a reimagined version of the popular game, Wordle, redesigned to be functional in a python terminal with a twist.
 
+## Link to Github ##
+
+[Github] (https://github.com/Connorswebdev/ConnorRoss_T1A3_Wordle)
+
+## Link to Trello ##
+
+[Trello] (https://trello.com/b/fLWKXXeA/wordle-game)
+
+## Code Style Guide ##
+
+[PEP8] (https://peps.python.org/pep-0008/#documentation-strings)
+
 ### Hardware Requirements
 This program recommends a modern operating system with either:
 * Windows 10
@@ -26,10 +38,10 @@ If python is not installed or up to date, please visit the Python [Download Page
 
 ## Features
 
-1. Two Modes: Regular or Hard - Regular is standard wordle, 5 letter words and 6 guesses. Hard mode is 7 letter words and only 5 guesses.
-2. Color Coded Output - Just like the wordle game, this application tells the user if their guess is in the correct spot and correct letter(Coloured green) or in the incorrect spot but correct letter(Coloured Yellow) or if the letter is not in the word at all (Coloured Red)
-3. Replayability - A replay function was added so the user can play multiple rounds.
-4. ASCII Art - Giving the terminal a bit more visual appearance by introducing an ASCII art when the user begins playing the game. This was aimed to be reminiscent of a main menu screen.
+1. Two Modes: Regular or Hard - Regular is standard wordle, 5 letter words and 6 guesses. Hard mode is 7 letter words and only 5 guesses. Inside of the making_words.py file, you will find a script I generated to pull all 5 and 7 letter words from the NLTK word library which is more comprehensive than the Oxford dictionary. The script then writes all the words into the word_list.txt file.
+2. Color Coded Output - Just like the wordle game, this application tells the user if their guess is in the correct spot and correct letter(Coloured green) or in the incorrect spot but correct letter(Coloured Yellow) or if the letter is not in the word at all (Coloured Red). This is measured by the application using a for loop and checking each letter and its position against the "secret word".
+3. Replayability - A replay function was added so the user can play multiple rounds. This feature is nested within the main game loop. It will appear once the game is over so the user can generate a new word and play it again. If they do not wish to play again, the console will output a "Thanks for playing!" message and the game will end.
+4. ASCII Art - Giving the terminal a bit more visual appearance by introducing an ASCII art when the user begins playing the game. This was aimed to be reminiscent of a main menu screen seen in video games. This is only displayed on the inital launch of the application. If the character chooses to replay they will not receive this screen again.
 
 ## Installation
 
@@ -57,7 +69,7 @@ python3 main.py
 
 ## Requirements
 
-* Note that these are installed once the "wordle_script.sh" script is activated.
+* Note that these are installed once the ```wordle_script.sh``` script is activated or the ```pip install -r requirements.txt``` is activated.
 
 ```
 NLTK Library == 3.8.1
