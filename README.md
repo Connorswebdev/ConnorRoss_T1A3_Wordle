@@ -58,9 +58,9 @@ If python is not installed or up to date, please visit the Python [Download Page
 
 ## Installation
 
-* For an easy install. Simply run the following command: 'bash wordle_script.sh' -OR- 'source wordle_script.sh' -OR- '. wordle_script.sh' --- This script will check and install all prerequisites and dependencies to ensure that the system can run the program.
+* For an easy install. Simply run the following command: ```bash wordle_script.sh``` -OR- ```source wordle_script.sh``` -OR- ```. wordle_script.sh``` --- This script will check and install all prerequisites and dependencies to ensure that the system can run the program.
 
-For other installation instructions, they have been listed below.
+For a manual installation, instructions have been listed below.
 
 1. Ensure Python 3 is installed. If it is not installed, please follow this link and find the correct installer for your operating system: https://www.python.org/downloads/
 2. Ensure Pip 3 is installed. If it is not installed, please follow this link and find the correct installer for your operating system: https://pypi.org/project/pip/
