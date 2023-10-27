@@ -2,6 +2,28 @@
 
 This application is a reimagined version of the popular game, Wordle, redesigned to be functional in a python terminal with a twist.
 
+### Hardware Requirements
+This program recommends a modern operating system with either:
+* Windows 10
+* Mac OS Monterey
+* Ubuntu 20.04
+- This program also recommends at least 2GB RAM and 1 GB of Free Disk Space
+
+#### [VS CODE](https://vscode-docs.readthedocs.io/en/latest/supporting/requirements/#:~:text=VS%20Code%20is%20lightweight%20and,1%20GB%20of%20RAM)
+
+### Software Requirements
+
+* By running the easy install script, you will be able to determine if your software is up to date and valid.
+
+If you require a manual input you should:
+1. Check if python is installed and up to date. Python must be 3.10.0 or greater to run the application. Check this by running:
+```python --version```
+You should see a message returned that looks like ```Python 3.10.12```
+
+If python is not installed or up to date, please visit the Python [Download Page](https://www.python.org/downloads/) and find the correct installer for your device.
+
+2. The terminal required a minimum width of 100 columns for the best user experience.
+
 ## Features
 
 1. Two Modes: Regular or Hard - Regular is standard wordle, 5 letter words and 6 guesses. Hard mode is 7 letter words and only 5 guesses.
@@ -33,22 +55,3 @@ python3 main.py
 4. Guess the word according to the colour coordination of the terminal. If the letter is green it is in the correct spot and correct letter. If the colour is yellow it is in the incorrect spot but it is the correct letter. If the colour is red it is not in the word at all.
 5. If you win or lose, you can decide to replay the game which will bring you back to step 3. If you wish to quit, simply type 'no' on the replay screen.
 
-### Hardware Requirements
-This program recommends a modern operating system with either:
-* Windows 10
-* Mac OS Monterey
-* Ubuntu 20.04
-- This program also recommends at least 2GB RAM and 1 GB of Free Disk Space
-
-#### [*VS CODE](https://vscode-docs.readthedocs.io/en/latest/supporting/requirements/#:~:text=VS%20Code%20is%20lightweight%20and,1%20GB%20of%20RAM)
-
-### Software Requirements
-
-* By running the easy install script, you will be able to determine if your software is up to date and valid.
-
-If you require a manual input you should:
-1. Check if python is installed and up to date. Python must be 3.10.0 or greater to run the application. Check this by running:
-```python --version```
-You should see a message returned that looks like ```Python 3.10.12```
-
-If python is not installed or up to date, please visit the Python [Download Page](https://www.python.org/downloads/) and find the correct installer for your device
