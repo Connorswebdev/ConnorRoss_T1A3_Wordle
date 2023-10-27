@@ -2,6 +2,7 @@ import random
 from nltk.corpus import words
 import math
 from colorama import init, Fore
+from ascii import main
             
     
 # Initialize colorama
@@ -25,22 +26,7 @@ def get_feedback(secret_word, guess):
         else: feedback.append('R')
                     
     return feedback
-def main():
-        print("""\
-          
- __      __       .__                                  __          
-/  \    /  \ ____ |  |   ____  ____   _____   ____   _/  |_  ____  
-\   \/\/   // __ \|  | _/ ___\/  _ \ /     \_/ __ \  \   __\/  _ \ 
- \        /\  ___/|  |_\  \__(  <_> )  Y Y  \  ___/   |  | (  <_> )
-  \__/\  /  \___  >____/\___  >____/|__|_|  /\___  >  |__|  \____/ 
-       \/       \/          \/            \/     \/                
-          __      __                .___.__                        
-         /  \    /  \___________  __| _/|  |   ____                
-  ______ \   \/\/   /  _ \_  __ \/ __ | |  | _/ __ \   ______      
- /_____/  \        (  <_> )  | \/ /_/ | |  |_\  ___/  /_____/      
-           \__/\  / \____/|__|  \____ | |____/\___  >              
-                \/                   \/           \/               
-""")
+
 def choose_game_difficulty():
         choice = input("Would you like to play (regular) or (hard) mode?").lower()
         if choice in ["regular", "hard"]:
@@ -90,7 +76,7 @@ def play_wordle():
                 
             print(colored_output)
             # Developer testing tool to check outputs were being represented properly.
-            print(secret_word)
+            # print(secret_word)
 
             if feedback == ['G'] * len(secret_word):
                 print(Fore.GREEN + f"Congratulations! You've guessed the word: {secret_word}")
