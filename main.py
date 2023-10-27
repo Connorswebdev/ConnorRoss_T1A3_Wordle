@@ -89,9 +89,10 @@ def play_wordle():
                     colored_output += Fore.RED + g + " "
                 
             print(colored_output)
-            #Developer testing tool to check outputs were being represented properly.
-            #print(secret_word)
-            if feedback == ['G'] * 5:
+            # Developer testing tool to check outputs were being represented properly.
+            print(secret_word)
+
+            if feedback == ['G'] * len(secret_word):
                 print(Fore.GREEN + f"Congratulations! You've guessed the word: {secret_word}")
                 play_again = input("Do you wish to play again? (yes/no): ").lower()
                 if play_again != "yes":
