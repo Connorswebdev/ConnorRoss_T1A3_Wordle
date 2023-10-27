@@ -89,7 +89,7 @@ def play_wordle():
                     colored_output += Fore.RED + g + " "
                 
             print(colored_output)
-            #Developer testing tool
+            #Developer testing tool to check outputs were being represented properly.
             #print(secret_word)
             if feedback == ['G'] * 5:
                 print(Fore.GREEN + f"Congratulations! You've guessed the word: {secret_word}")
