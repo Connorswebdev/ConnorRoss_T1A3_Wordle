@@ -25,7 +25,8 @@ This program recommends a modern operating system with either:
 
 ## Installation
 
-* For an easy install. Simply run the following command: ```bash
+* For an easy install. Simply run the following command:
+```bash
 bash wordle_script.sh
 ``` 
 
