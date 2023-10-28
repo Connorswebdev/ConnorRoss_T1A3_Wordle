@@ -17,7 +17,7 @@ valid_words = load_words_from_file("word_list.txt")
 
 def get_feedback(secret_word, guess):
     feedback = []
-
+# Determining the color of the feedback and user word.
     for i, g in enumerate(guess):
         if g == secret_word[i]:
             feedback.append('G')
@@ -28,7 +28,8 @@ def get_feedback(secret_word, guess):
     return feedback
 
 def choose_game_difficulty():
-        choice = input("Would you like to play (regular) or (hard) mode?").lower()
+        # Added .lower() to make sure that if the user entered in captials only or mixed it would still be accepted. If prompt is not entered the user will see the print instead.
+        choice = input("Would you like to play (regular) or (hard) mode?").lower() 
         if choice in ["regular", "hard"]:
             return choice
         print("Invalid choice. Select either 'regular' or 'hard'.")
@@ -73,7 +74,9 @@ def play_wordle():
                     colored_output += Fore.RED + g + " "
 
             print(colored_output)
-            # Developer tool for testing purposes
+
+            # Developer tool for testing purposes, checking word output and play again feature. Check that other characters or spaces are not being accepted in the input from user.
+
             # print(secret_word)
             
             if feedback == ['G'] * len(secret_word):

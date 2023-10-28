@@ -110,3 +110,14 @@ Colorama == 0.4.6
 
 * I would like to acknowledge the Wordle game owned by "The New York Times Company" as this game was heavily inspired by their original creation.
 
+Stack Overflow. (2023). How to handle duplicate letters in wordle. [online] Available at: https://stackoverflow.com/questions/76450068/how-to-handle-duplicate-letters-in-wordle [Accessed 27 Oct. 2023].
+
+‌Morales, M. (2017). How To Work with Language Data in Python 3 using the Natural Language Toolkit (NLTK). [online] Digitalocean.com. Available at: https://www.digitalocean.com/community/tutorials/how-to-work-with-language-data-in-python-3-using-the-natural-language-toolkit-nltk [Accessed 25 Oct. 2023].
+
+‌GeeksforGeeks. (2017). Print Colors in Python terminal. [online] Available at: https://www.geeksforgeeks.org/print-colors-python-terminal/ [Accessed 26 Oct. 2023].
+
+Python Software Foundation (2021). Repeat while loop? [online] Discussions on Python.org. Available at: https://discuss.python.org/t/repeat-while-loop/11572 [Accessed 26 Oct. 2023].
+
+‌
+
+‌
