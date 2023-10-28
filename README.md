@@ -25,7 +25,22 @@ This program recommends a modern operating system with either:
 
 ## Installation
 
-* For an easy install. Simply run the following command: 'bash wordle_script.sh' -OR- 'source wordle_script.sh' -OR- '. wordle_script.sh' --- This script will check and install all prerequisites and dependencies to ensure that the system can run the program.
+* For an easy install. Simply run the following command: ```bash
+bash wordle_script.sh
+``` 
+
+-OR-
+
+```bash
+source wordle_script.sh
+```
+
+-OR-
+
+```bash
+. wordle_script.sh
+```
+This script will check and install all prerequisites and dependencies to ensure that the system can run the program.
 
 For other installation instructions, they have been listed below.
 
