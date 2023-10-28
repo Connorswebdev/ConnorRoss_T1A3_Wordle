@@ -5,7 +5,7 @@ from colorama import init, Fore
 from ascii import main
             
     
-# Initialize colorama
+# Initialize colorama 
 init(autoreset=True)
 def load_words_from_file(filename):
     with open(filename, 'r') as f:
@@ -42,29 +42,27 @@ def word_list_based_on_mode(mode):
 def play_wordle():
     main()
     while True:
-    #defining the wordle mode and picking a random word from the list matching the criteria
         mode = choose_game_difficulty()
         word_list = word_list_based_on_mode(mode)
         secret_word = random.choice(word_list)
         max_attempts = 6 if mode == 'regular' else 5
         attempts_left = max_attempts
+        game_won = False  # Initialize game_won flag
 
         while attempts_left > 0:
             attempt_number = max_attempts - attempts_left + 1
             guess = input(f"Attempt {attempt_number}: Guess a {len(secret_word)}-letter word: ").lower()
-        
+
             if len(guess) != len(secret_word) or ' ' in guess:
                 print(f"Please enter a {len(secret_word)}-letter word.")
                 continue
-            
             elif guess not in valid_words:
                 print("Please enter a real word.")
                 continue
 
             attempts_left -= 1
-
             feedback = get_feedback(secret_word, guess)
-        
+
             colored_output = ""
             for i, (f, g) in enumerate(zip(feedback, guess)):
                 if f == 'G':
@@ -73,24 +71,22 @@ def play_wordle():
                     colored_output += Fore.YELLOW + g + " "
                 else:
                     colored_output += Fore.RED + g + " "
-                
-            print(colored_output)
-            # Developer testing tool to check outputs were being represented properly.
-            # print(secret_word)
 
+            print(colored_output)
+            # Developer tool for testing purposes
+            print(secret_word)
+            
             if feedback == ['G'] * len(secret_word):
                 print(Fore.GREEN + f"Congratulations! You've guessed the word: {secret_word}")
-                play_again = input("Do you wish to play again? (yes/no): ").lower()
-                if play_again != "yes":
-                    print("Thanks for playing!")
-                    exit()
+                game_won = True
+                break
 
-            if attempts_left == 0:
-                print(Fore.RED + f"You've run out of attempts. The secret word was: {secret_word}")
+        if not game_won and attempts_left == 0:
+            print(Fore.RED + f"You've run out of attempts. The secret word was: {secret_word}")
 
-                play_again = input("Do you wish to play again? (yes/no): ").lower()
-                if play_again != "yes":
-                    print("Thanks for playing!")
-                    exit()
+        play_again = input("Do you wish to play again? (yes/no): ").lower()
+        if play_again != "yes":
+            print("Thanks for playing!")
+            break  # Exit the main loop to end the game
 
 play_wordle()

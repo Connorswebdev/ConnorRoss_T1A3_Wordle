@@ -89,3 +89,8 @@ NLTK Library == 3.8.1
 PyEnchant == 3.2.2
 Colorama == 0.4.6
 ```
+
+## Acknowledgements and References
+
+* I would like to acknowledge the Wordle game owned by "The New York Times Company" as this game was heavily inspired by their original creation.
+
