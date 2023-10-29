@@ -29,19 +29,19 @@ To download this game, open the [github] (https://github.com/Connorswebdev/Conno
 
 * For an easy install. Simply run the following command:
 ```bash
-bash wordle_script.sh
+bash ./src/wordle_script.sh
 ``` 
 
 -OR-
 
 ```bash
-source wordle_script.sh
+source ./src/wordle_script.sh
 ```
 
 -OR-
 
 ```bash
-. wordle_script.sh
+. ./src/wordle_script.sh
 ```
 This script will check and install all prerequisites and dependencies to ensure that the system can run the program.
 
@@ -51,7 +51,7 @@ For other installation instructions, they have been listed below.
 2. Ensure Pip 3 is installed. If it is not installed, please follow this link and find the correct installer for your operating system: https://pypi.org/project/pip/
 3. Install the required dependencies:
 ```bash
-pip install -r requirements.txt
+pip install -r ./src/requirements.txt
 ```
 
 ### Software Requirements
@@ -76,7 +76,7 @@ If python is not installed or up to date, please visit the Python [Download Page
 
 ## Installation
 
-* For an easy install. Simply run the following command: ```bash wordle_script.sh``` -OR- ```source wordle_script.sh``` -OR- ```. wordle_script.sh``` --- This script will check and install all prerequisites and dependencies to ensure that the system can run the program.
+* For an easy install. Simply run the following command: ```bash ./src/wordle_script.sh``` -OR- ```source ./src/wordle_script.sh``` -OR- ```. ./src/wordle_script.sh``` --- This script will check and install all prerequisites and dependencies to ensure that the system can run the program.
 
 For a manual installation, instructions have been listed below.
 
@@ -84,7 +84,7 @@ For a manual installation, instructions have been listed below.
 2. Ensure Pip 3 is installed. If it is not installed, please follow this link and find the correct installer for your operating system: https://pypi.org/project/pip/
 3. Install the required dependencies:
 ```bash
-pip install -r requirements.txt
+pip install -r ./src/requirements.txt
 ```
 
 ## How to Play
@@ -92,7 +92,7 @@ pip install -r requirements.txt
 1. If you used the easy install the game will automatically begin. 
 2. If you used the manual install, run the game from the terminal:
 ```bash
-python3 main.py
+python3 ./src/main.py
 ```
 3. Choose a difficulty from regular or hard. Regular is the standard wordle we know and love with 5 letter words and 6 guesses. Hard mode is slightly more difficult with 7 letter words and only 5 guesses.
 4. Guess the word according to the colour coordination of the terminal. If the letter is green it is in the correct spot and correct letter. If the colour is yellow it is in the incorrect spot but it is the correct letter. If the colour is red it is not in the word at all.
@@ -100,7 +100,7 @@ python3 main.py
 
 ## Requirements
 
-* Note that these are installed once the ```wordle_script.sh``` script is activated or the ```pip install -r requirements.txt``` is activated.
+* Note that these are installed once the ```./src/wordle_script.sh``` script is activated or the ```pip install -r ./src/requirements.txt``` is activated.
 
 ```
 NLTK Library == 3.8.1
