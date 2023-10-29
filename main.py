@@ -28,11 +28,13 @@ def get_feedback(secret_word, guess):
     return feedback
 
 def choose_game_difficulty():
-        # Added .lower() to make sure that if the user entered in captials only or mixed it would still be accepted. If prompt is not entered the user will see the print instead.
-        choice = input("Would you like to play (regular) or (hard) mode?").lower() 
-        if choice in ["regular", "hard"]:
-            return choice
-        print("Invalid choice. Select either 'regular' or 'hard'.")
+        while True:
+        # Added .lower() to make sure that if the user entered in captials only or mixed it would still be accepted. If prompt is not entered the user will see the print instead. .strip() is added for if the user enters a space.
+            choice = input("Would you like to play (regular) or (hard) mode?").strip().lower() 
+            if choice in ["regular", "hard"]:
+                return choice
+            else:
+                print("Invalid choice. Select either 'regular' or 'hard'.")
             
 def word_list_based_on_mode(mode):
     if mode == 'regular':
@@ -77,7 +79,7 @@ def play_wordle():
 
             # Developer tool for testing purposes, checking word output and play again feature. Check that other characters or spaces are not being accepted in the input from user.
 
-            # print(secret_word)
+            print(secret_word)
             
             if feedback == ['G'] * len(secret_word):
                 print(Fore.GREEN + f"Congratulations! You've guessed the word: {secret_word}")
