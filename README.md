@@ -4,15 +4,15 @@ This application is a reimagined version of the popular game, Wordle, redesigned
 
 ## Link to Github ##
 
-[Github] (https://github.com/Connorswebdev/ConnorRoss_T1A3_Wordle)
+[Github](https://github.com/Connorswebdev/ConnorRoss_T1A3_Wordle)
 
 ## Link to Trello ##
 
-[Trello] (https://trello.com/b/fLWKXXeA/wordle-game)
+[Trello](https://trello.com/b/fLWKXXeA/wordle-game)
 
 ## Code Style Guide ##
 
-[PEP8] (https://peps.python.org/pep-0008/#documentation-strings)
+[PEP8](https://peps.python.org/pep-0008/#documentation-strings)
 
 ### Hardware Requirements
 This program recommends a modern operating system with either:
@@ -25,7 +25,7 @@ This program recommends a modern operating system with either:
 
 ## Installation
 
-To download this game, open the [github] (https://github.com/Connorswebdev/ConnorRoss_T1A3_Wordle) repository  and click the green code button. Select 'Download ZIP' and move the file to a directory which can be navigated to.
+To download this game, open the [github](https://github.com/Connorswebdev/ConnorRoss_T1A3_Wordle) repository  and click the green code button. Select 'Download ZIP' and move the file to a directory which can be navigated to.
 
 * For an easy install. Simply run the following command:
 ```bash
