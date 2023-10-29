@@ -25,6 +25,8 @@ This program recommends a modern operating system with either:
 
 ## Installation
 
+To download this game, open the [github] (https://github.com/Connorswebdev/ConnorRoss_T1A3_Wordle) repository  and click the green code button. Select 'Download ZIP' and move the file to a directory which can be navigated to.
+
 * For an easy install. Simply run the following command:
 ```bash
 bash wordle_script.sh
