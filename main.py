@@ -79,7 +79,7 @@ def play_wordle():
 
             # Developer tool for testing purposes, checking word output and play again feature. Check that other characters or spaces are not being accepted in the input from user.
 
-            print(secret_word)
+            # print(secret_word)
             
             if feedback == ['G'] * len(secret_word):
                 print(Fore.GREEN + f"Congratulations! You've guessed the word: {secret_word}")
