@@ -13,7 +13,7 @@ def load_words_from_file(filename):
         words = {word.strip().lower() for word in word_content}
     return words
 
-valid_words = load_words_from_file("word_list.txt")
+valid_words = load_words_from_file("./src/word_list.txt")
 
 def get_feedback(secret_word, guess):
     feedback = []

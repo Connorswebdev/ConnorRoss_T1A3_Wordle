@@ -12,10 +12,10 @@ fi
 
 python3 -m pip install --upgrade pip
 
-python3 -m pip install -r requirements.txt
+python3 -m pip install -r ./src/requirements.txt
 
 source .venv/bin/activate
-python3 main.py
+python3 ./src/main.py
 # Detecting OS for auto running
 
 
